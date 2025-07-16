@@ -85,22 +85,4 @@ cp "$SERVER_HELPER_HPC" "$CUDAQ_DIR/lib"
 cp "$TARGET_MQP" "$CUDAQ_DIR/targets"
 cp "$TARGET_HPC" "$CUDAQ_DIR/targets"
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 echo "✅ MQSS CUDA-Q Adapter successfully installed to '$CUDAQ_DIR'."
