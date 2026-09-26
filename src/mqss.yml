@@ -1,0 +1,65 @@
+# Copyright (c) 2024 - 2026 MQSS Project
+# All rights reserved.
+#
+# Licensed under the Apache License v2.0 with LLVM Exceptions (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# https://llvm.org/LICENSE.txt
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations under
+# the License.
+#
+# SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
+
+name: mqss
+description: "CUDA-Q target for MQSS."
+config:
+  platform-qpu: mqss
+  gen-target-backend: true
+  link-libs: ["-lmqss-adapter"]
+  jit-mid-level-pipeline: "quake-to-cc-prep"
+  codegen-emission: qasm2
+  library-mode: false
+
+target-arguments:
+  - key: token
+    required: false
+    type: string
+    platform-arg: token
+    help-string: "Authentication Token for Munich Quantum Portal."
+  - key: device
+    required: false
+    type: string
+    platform-arg: device
+    help-string: "Target Quantum Resource that is available to Munich Quantum Portal. E.g. EQE1, AQT20"
+  - key: endpoint
+    required: false
+    type: string
+    platform-arg: endpoint
+    help-string: "In remote mode, the URL of the Munich Quantum Portal, default: https://portal.quantum.lrz.de:4000/v1/. In HPC mode, the name of the target queue, default: qoffload_api_request_reception_queue_$(HOSTMANE)"
+  - key: access_mode
+    required: true
+    type: string
+    platform-arg: access_mode
+    help-string: "Either remote or hpc."
+  - key: exchange_format
+    required: false
+    type: string
+    platform-arg: exchange_format
+    help-string: "The IR to be passed. Default:qasm2"
+  - key: timeout
+    required: false
+    type: string
+    platform-arg: timeout
+  - key: queued
+    required: false
+    type: string
+    platform-arg: exchange_format
+  - key: no_modify
+    required: false
+    type: string
+    platform-arg: no_modify

@@ -3,17 +3,15 @@ FormatStyle: file
 Checks: |
   bugprone-*,
   -bugprone-easily-swappable-parameters,
+  -bugprone-unchecked-optional-access,
   clang-analyzer-*,
-  -clang-analyzer-security.insecureAPI.*,
+  -clang-analyzer-core.NullDereference,
   clang-diagnostic-*,
   cppcoreguidelines-*,
   -cppcoreguidelines-non-private-member-variables-in-classes,
+  -cppcoreguidelines-special-member-functions,
   -cppcoreguidelines-avoid-magic-numbers,
   -cppcoreguidelines-macro-usage,
-  -cppcoreguidelines-pro-bounds-constant-array-index,
-  -cppcoreguidelines-pro-bounds-array-to-pointer-decay,
-  -cppcoreguidelines-pro-bounds-pointer-arithmetic,
-  -cppcoreguidelines-owning-memory,
   google-*,
   -google-readability-todo,
   -google-build-using-namespace,
@@ -33,36 +31,34 @@ CheckOptions:
   - key: readability-identifier-naming.ClassCase
     value: CamelCase
   - key: readability-identifier-naming.ConstantParameterCase
-    value: lower_case
+    value: camelBack
   - key: readability-identifier-naming.EnumCase
-    value: UPPER_CASE
+    value: CamelCase
   - key: readability-identifier-naming.EnumConstantCase
-    value: UPPER_CASE
+    value: CamelCase
   - key: readability-identifier-naming.FunctionCase
-    value: Leading_upper_snake_case
+    value: camelBack
   - key: readability-identifier-naming.FunctionIgnoredRegexp
-    value: ".*QDMI.*"
+    value: ".*MQSS.*"
   - key: readability-identifier-naming.GlobalConstantCase
     value: UPPER_CASE
   - key: readability-identifier-naming.IgnoreMainLikeFunctions
     value: "true"
   - key: readability-identifier-naming.LocalConstantCase
-    value: lower_case
+    value: camelBack
+  - key: readability-identifier-naming.LocalVariableCase
+    value: camelBack
   - key: readability-identifier-naming.MemberCase
-    value: lower_case
-  - key: readability-identifier-naming.MemberIgnoredRegexp
-    value: ".*QDMI.*"
+    value: camelBack
   - key: readability-identifier-naming.MethodCase
-    value: lower_case
+    value: camelBack
   - key: readability-identifier-naming.ParameterCase
-    value: lower_case
+    value: camelBack
   - key: readability-identifier-naming.NamespaceCase
     value: lower_case
   - key: readability-identifier-naming.StaticConstantCase
     value: UPPER_CASE
   - key: readability-identifier-naming.StructCase
-    value: Leading_upper_snake_case
-  - key: readability-identifier-naming.StructIgnoredRegexp
-    value: ".*QDMI.*"
+    value: CamelCase
   - key: readability-identifier-naming.VariableCase
-    value: lower_case
+    value: camelBack
